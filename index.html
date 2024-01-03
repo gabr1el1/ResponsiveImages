@@ -69,16 +69,18 @@
         </p>
         <!-- resolution switching -->
         <img
-          srcset="city-size3.jpg, city-size2.jpg 1.5x, city.jpg 2x"
-          src="city.jpg"
+          srcset="city-size320w.jpg, city-480w.jpg 1.5x, city850w.jpg 2x"
+          src="city-850w.jpg"
           alt="city"
         />
       </section>
     </main>
 
     <script>
+      let image = document.querySelector("img[src='city.jpg']");
+      let imageCurrentSrc = image.currentSrc;
       document.body.append(
-        document.querySelector("img[src='city.jpg']").currentSrc
+        imageCurrentSrc.substring(imageCurrentSrc.lastIndexOf("/"))
       );
     </script>
   </body>
